@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as plt
 import seaborn as sns
 # URLs de los archivos CSV 
-barreras_por_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
+barreras_por_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
 demanda_potencial_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
 riesgo_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
 ventas_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
