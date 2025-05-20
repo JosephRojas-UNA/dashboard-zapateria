@@ -24,8 +24,7 @@ st.dataframe(barreras_por_pais_filtrados)
 st.subheader("riesgo_pais de Chocolates") 
 riesgo_pais_filtradas = riesgo_pais [riesgo_pais["País"] == pais_seleccionado] 
 fig, ax = plt.subplots() 
-ax.bar(riesgo_pais_filtradas["País"], riesgo_pais_filtradas["riesgo_pais (USD 
-millones)"], color='#2E86C1') 
+ax.bar(riesgo_pais_filtradas["País"], riesgo_pais_filtradas["riesgo_pais (USD millones)"], color='#2E86C1') 
 ax.set_xlabel("País") 
 ax.set_ylabel("riesgo_pais (USD millones)") 
 ax.set_title(f"riesgo_pais de Chocolates en {pais_seleccionado}") 
