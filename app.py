@@ -1,6 +1,6 @@
-import streamlit as st 
-import pandas as pd 
-import matplotlib.pyplot as plt 
+import streamlit 
+import pandas 
+import matplotlib
 # URLs de los archivos CSV 
 barreras_por_pais_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
 demanda_potencial_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
@@ -16,8 +16,7 @@ st.title("Dashboard Interactivo de Exportaciones de Chocolates")
 paises = exportaciones["País"].unique() 
 pais_seleccionado = st.selectbox("Selecciona un país para ver los detalles", paises) 
 # Mostrar datos de clientes
-st.subheader("         
-Clientes") 
+st.subheader("Clientes") 
 clientes_filtrados = clientes[clientes["País"] == pais_seleccionado] 
 st.dataframe(clientes_filtrados) 
 # Mostrar datos de exportaciones 
