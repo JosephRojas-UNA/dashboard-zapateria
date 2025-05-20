@@ -3,14 +3,14 @@ import pandas as pd
 import plotly.express as plt
 import seaborn as sns
 # URLs de los archivos CSV 
-barreras_por_pais_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
-demanda_potencial_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-riesgo_pais_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
-ventas_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-barreras_por_pais = pd.read_csv(barreras_por_pais_url) 
-demanda_potencial= pd.read_csv(demanda_potencial_url) 
-riesgo_pais= pd.read_csv(riesgo_pais_url) 
-ventas= pd.read_csv(ventas_url) 
+barreras_por_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
+demanda_potencial_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
+riesgo_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
+ventas_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
+barreras_por_pais=pd.read_csv(barreras_por_pais_url) 
+demanda_potencial=pd.read_csv(demanda_potencial_url) 
+riesgo_pais=pd.read_csv(riesgo_pais_url) 
+ventas=pd.read_csv(ventas_url) 
 # Título del Dashboard 
 st.title("Dashboard Interactivo de riesgo_pais de Chocolates") 
 # Filtro de país 
