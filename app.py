@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd 
 import matplotlib.pyplot as plt 
 # URLs de los archivos CSV 
-clientes_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
-mercados_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-exportaciones_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
-barreras_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-clientes = pd.read_csv(clientes_url) 
-mercados = pd.read_csv(mercados_url) 
-exportaciones = pd.read_csv(exportaciones_url) 
-barreras = pd.read_csv(barreras_url) 
+barreras_por_pais_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main 
+demanda_potencial_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
+riesgo_pais_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
+ventas_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
+barreras_por_pais = pd.read_csv(clientes_url) 
+demanda_potencial= pd.read_csv(mercados_url) 
+riesgo_pais= pd.read_csv(exportaciones_url) 
+ventas= pd.read_csv(barreras_url) 
 # Título del Dashboard 
 st.title("      
 Dashboard Interactivo de Exportaciones de Chocolates") 
