@@ -6,7 +6,6 @@ clientes_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
 mercados_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
 exportaciones_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
 barreras_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-Export/main/barreras.csv" 
 clientes = pd.read_csv(clientes_url) 
 mercados = pd.read_csv(mercados_url) 
 exportaciones = pd.read_csv(exportaciones_url) 
