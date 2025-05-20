@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 # URLs de los archivos CSV 
 clientes_url = "https://raw.githubusercontent.com/TU_USUARIO/Dashboard-Chocolate
 Export/main/clientes.csv" 
-mercados_url = "https://raw.githubusercontent.com/TU_USUARIO/Dashboard
-Chocolate-Export/main/mercados.csv" 
+mercados_url = https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
 exportaciones_url = "https://raw.githubusercontent.com/TU_USUARIO/Dashboard
 Chocolate-Export/main/exportaciones.csv" 
 barreras_url = "https://raw.githubusercontent.com/TU_USUARIO/Dashboard-Chocolate
