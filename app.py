@@ -11,8 +11,7 @@ demanda_potencial= pd.read_csv(mercados_url)
 riesgo_pais= pd.read_csv(exportaciones_url) 
 ventas= pd.read_csv(barreras_url) 
 # Título del Dashboard 
-st.title("      
-Dashboard Interactivo de Exportaciones de Chocolates") 
+st.title("Dashboard Interactivo de Exportaciones de Chocolates") 
 # Filtro de país 
 paises = exportaciones["País"].unique() 
 pais_seleccionado = st.selectbox("Selecciona un país para ver los detalles", paises) 
