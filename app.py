@@ -2,11 +2,20 @@ import streamlit as st
 import pandas as pd
 import plotly.express as plt
 import seaborn as sns
-# URLs de los archivos CSV 
-barreras_por_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-demanda_potencial_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
-riesgo_pais_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main
-ventas_url=https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA
+
+#Configuración del título del dashboard
+st.set_page_config(page_title="Dashboard de Internacionalización de Zapatos en Centroamérica",layout="wide")
+
+# Cargar los datos desde los archivos CSV
+@st.cache_data
+def load_data():
+  demanda_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA)
+  barreras_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA)
+  riesgo_pais_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main)
+  ventas_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA)
+  return demanda_df, barreras_df, riesgo_df, ventas_df
+
+                          
 barreras_por_pais=pd.read_csv(barreras_por_pais_url) 
 demanda_potencial=pd.read_csv(demanda_potencial_url) 
 riesgo_pais=pd.read_csv(riesgo_pais_url) 
