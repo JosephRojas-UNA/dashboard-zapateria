@@ -1,47 +1,60 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 
-#Configuración del título del dashboard
-st.set_page_config(page_title="Dashboard de Internacionalización de Zapatos en Centroamérica",layout="wide")
+st.set_page_config(page_title='Dashboard Chocolate Export', layout='wide')
 
-# Cargar los datos desde los archivos CSV
+# Cargar los datos desde archivos CSV en GitHub
 @st.cache_data
 def load_data():
-  demanda_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/barreras_por_pais.csv)
-  barreras_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/demanda_potencial.csv)
-  riesgo_pais_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/riesgo_pais.csv)
-  ventas_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/ventas.csv)
-  return demanda_df, barreras_df, riesgo_df, ventas_df
+    base_url = 'https://raw.githubusercontent.com/yoselin1990/Dashboard-Chocolate-Export-/main/'
+    clientes_df = pd.read_csv(base_url + 'clientes.csv')
+    mercados_df = pd.read_csv(base_url + 'mercados.csv')
+    exportaciones_df = pd.read_csv(base_url + 'exportaciones.csv')
+    barreras_df = pd.read_csv(base_url + 'barreras.csv')
+    return clientes_df, mercados_df, exportaciones_df, barreras_df
+clientes_df, mercados_df, exportaciones_df, barreras_df = load_data()
 
-demanda_df, barreras_df, riesgo_df, ventas_df = load_data()
+# Título del Dashboard
+st.title("Dashboard Interactivo de Exportaciones de Chocolates")
 
-# Mostar el título del dashboard
-st.title("Dashboard Interactivo para la Internacionalización de zapatos en Centroamérica")
+# Filtro de país
+paises = exportaciones_df["País"].unique()
+pais_seleccionado = st.selectbox("Selecciona un país para ver los detalles", paises)
 
-# Sección de demanda potencial
-st.header("Demanda Porencial por País")
-fig, ax = plt.subplots(figsize=(12,6))
-sns.barplot(x="País", y="Demanda Hombre", data=demanda_df, ax=ax, color="skyblue")
-sns.barplot(x="País", y="Demanda Mujer", data=demanda_df, ax=ax, color="salmon", alpha=0.7)
-ax.set_title("Demanda Potencial de Calzado por Género")
-ax.legend(["Demanda Hombre", "Demanda Mujer"])
+# Mostrar datos de clientes
+st.subheader("Clientes")
+clientes_filtrados = clientes_df[clientes_df["País"] == pais_seleccionado]
+st.dataframe(clientes_filtrados)
+
+# Mostrar datos de exportaciones
+st.subheader("Exportaciones de Chocolates")
+exportaciones_filtradas = exportaciones_df[exportaciones_df["País"] == pais_seleccionado]
+fig, ax = plt.subplots()
+ax.bar(exportaciones_filtradas["País"], exportaciones_filtradas["Exportaciones (USD millones)"], color='#2E86C1')
+ax.set_xlabel("País")
+ax.set_ylabel("Exportaciones (USD millones)")
+ax.set_title(f"Exportaciones de Chocolates en {pais_seleccionado}")
+plt.xticks(rotation=45)
 st.pyplot(fig)
 
-# Sección de barreras de entrada
-st.header("Barreras de Entrada por País")
-st.dataframe(barreras_df)
+# Mostrar datos de mercados
+st.subheader("Segmentos de Mercado")
+mercados_filtrados = mercados_df[mercados_df["País"] == pais_seleccionado]
+st.dataframe(mercados_filtrados)
 
-# Sección de riesgo país
-st.header("Intensidad de Riesgo País para Operaciones")
-st.datafreme(riesgo_df)
+# Mostrar barreras de entrada
+st.subheader("Barreras de Entrada")
+barreras_filtradas = barreras_df[barreras_df["País"] == pais_seleccionado]
+st.dataframe(barreras_filtradas)
 
-# Sección de ventas de competidores
-st.header("Ventas de Competidores por País")
-fig2, ax2 = plt.subplots(figsize=(12,6))
-barras = ventas_df.set_index("País").plot(kind="bar", ax=ax2, colormap="Paired")
-ax2.set_title("Ventas de Competidores por País")
+# Análisis Comparativo
+st.subheader("Análisis Comparativo")
+fig2, ax2 = plt.subplots(figsize=(8, 5))
+ax2.bar(mercados_df["País"], mercados_df["Tamaño del Mercado (USD millones)"], color='#F39C12')
+ax2.set_xlabel("País")
+ax2.set_ylabel("Tamaño del Mercado (USD millones)")
+ax2.set_title("Comparación de Tamaños de Mercado")
+plt.xticks(rotation=45)
 st.pyplot(fig2)
-
-st.write("Desarrollado para análisis de internacionalización de operaciones en Centroamérica.")
