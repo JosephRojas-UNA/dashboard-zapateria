@@ -10,7 +10,7 @@ st.set_page_config(page_title="Dashboard de Internacionalización de Zapatos en 
 @st.cache_data
 def load_data():
   demanda_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/barreras_por_pais.csv)
-  barreras_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA)
+  barreras_df = pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/blob/main/demanda_potencial.csv)
   riesgo_pais_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/tree/main)
   ventas_url= pd.read_csv(https://github.com/JosephRojas-UNA/dashboard-zapateria/commits?author=JosephRojas-UNA)
   return demanda_df, barreras_df, riesgo_df, ventas_df
