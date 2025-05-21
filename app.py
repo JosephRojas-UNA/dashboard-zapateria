@@ -25,7 +25,7 @@ st.header("Demanda Porencial por País")
 fig, ax = plt.subplots(figsize=(12,6))
 sns.barplot(x="País", y="Demanda Hombre", data=demanda_df, ax=ax, color="skyblue")
 sns.barplot(x="País", y="Demanda Mujer", data=demanda_df, ax=ax, color="salmon", alpha=0.7)
-ax.set_title(Demanda Potencial de Calzado por Género")
+ax.set_title("Demanda Potencial de Calzado por Género")
 ax.legend(["Demanda Hombre", "Demanda Mujer"])
 st.pyplot(fig)
 
